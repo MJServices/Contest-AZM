@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 5000;
 // Import models to ensure they are loaded
 require('./src/models/User');
 require('./src/models/UserDetails');
+require('./src/models/Gallery');
+require('./src/models/Project');
+require('./src/models/Consultation');
+require('./src/models/Review');
+require('./src/models/Notification');
 
 // Import model associations
 require('./src/models/associations');

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { showEmailSent, showError } from '../utils/sweetAlert';
 import './Auth.css';
 
 const Login = () => {
@@ -50,10 +51,15 @@ const Login = () => {
 
   const handleResendVerification = async () => {
     try {
-      await resendVerification(watchedEmail);
-      setShowResendVerification(false);
+      const result = await resendVerification(watchedEmail);
+      if (result.success) {
+        setShowResendVerification(false);
+        showEmailSent();
+      } else {
+        showError('Failed to Send', result.message);
+      }
     } catch (error) {
-      // Error is handled by the hook
+      showError('Error', 'Failed to resend verification email. Please try again.');
     }
   };
 
@@ -125,10 +131,10 @@ const Login = () => {
                 type="email"
                 id="email"
                 {...register('email', {
-                  required: 'Email is required',
+                  required: 'Please enter your email address',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
+                    message: 'Please enter a valid email address (e.g., user@example.com)'
                   }
                 })}
                 className={errors.email ? 'error' : ''}
@@ -161,10 +167,10 @@ const Login = () => {
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 {...register('password', {
-                  required: 'Password is required',
+                  required: 'Please enter your password',
                   minLength: {
-                    value: 6,
-                    message: 'Password must be at least 6 characters'
+                    value: 8,
+                    message: 'Password must be at least 8 characters long'
                   }
                 })}
                 className={errors.password ? 'error' : ''}

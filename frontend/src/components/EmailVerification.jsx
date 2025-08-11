@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import LoadingSpinner from './LoadingSpinner';
+import { showEmailVerified, showError } from '../utils/sweetAlert';
 import './Auth.css';
 
 const EmailVerification = () => {
@@ -9,6 +10,7 @@ const EmailVerification = () => {
   const { verifyEmail } = useAuth();
   const [status, setStatus] = useState('verifying'); // 'verifying', 'success', 'error'
   const [message, setMessage] = useState('');
+  const hasVerified = useRef(false); // Prevent duplicate API calls
 
   useEffect(() => {
     const handleVerification = async () => {
@@ -18,19 +20,34 @@ const EmailVerification = () => {
         return;
       }
 
+      // Prevent duplicate verification attempts
+      if (hasVerified.current) {
+        return;
+      }
+      hasVerified.current = true;
+
       try {
         const result = await verifyEmail(token);
         
         if (result.success) {
           setStatus('success');
           setMessage(result.message);
+          
+          // Show success alert
+          showEmailVerified();
         } else {
           setStatus('error');
           setMessage(result.message);
+          
+          // Show error alert
+          showError('Verification Failed', result.message);
         }
       } catch (error) {
         setStatus('error');
         setMessage('Email verification failed. Please try again.');
+        
+        // Show error alert
+        showError('Verification Failed', 'Email verification failed. Please try again.');
       }
     };
 

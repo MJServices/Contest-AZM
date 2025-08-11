@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { authAPI, tokenManager } from '../services/api';
+import { showWelcome } from '../utils/sweetAlert';
 
 const AuthContext = createContext();
 
@@ -15,6 +16,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isResendingVerification, setIsResendingVerification] = useState(false);
   const authCheckRef = useRef(false);
 
   // Check if user is authenticated on app load
@@ -46,6 +49,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
+    setIsLoggingIn(true);
     try {
       const response = await authAPI.login({ email, password });
       
@@ -59,18 +63,19 @@ export const AuthProvider = ({ children }) => {
         setUser(userData);
         setIsAuthenticated(true);
         
+        // Show welcome message
+        showWelcome(userData.firstName || userData.username);
+        
         return { success: true, user: userData };
       }
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Login failed';
       const errorCode = error.response?.data?.error;
       
-      return { 
-        success: false, 
-        message: errorMessage,
-        error: errorCode,
-        data: error.response?.data?.data
-      };
+      // Throw error to be handled by the component
+      throw error;
+    } finally {
+      setIsLoggingIn(false);
     }
   };
 
@@ -121,12 +126,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const resendVerification = async (email) => {
+    setIsResendingVerification(true);
     try {
       const response = await authAPI.resendVerification(email);
       return { success: true, message: response.data.message };
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Failed to resend verification';
       return { success: false, message: errorMessage };
+    } finally {
+      setIsResendingVerification(false);
     }
   };
 
@@ -154,6 +162,8 @@ export const AuthProvider = ({ children }) => {
     user,
     isAuthenticated,
     loading,
+    isLoggingIn,
+    isResendingVerification,
     login,
     register,
     logout,

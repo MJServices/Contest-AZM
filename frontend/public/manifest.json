@@ -1,7 +1,13 @@
 {
   "short_name": "DecorVista",
-  "name": "DecorVista - Interior Design Platform",
+  "name": "DecorVista - Professional Interior Design Platform",
   "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
@@ -10,7 +16,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#667eea",
-  "background_color": "#ffffff",
-  "description": "Professional interior design consultation and home decor platform"
+  "theme_color": "#6974DD",
+  "background_color": "#F5F7FA",
+  "description": "Transform your space with expert interior designers. Browse inspiration, book consultations, and manage your design projects.",
+  "categories": ["lifestyle", "design", "home"]
 }
