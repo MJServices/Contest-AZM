@@ -163,9 +163,19 @@ const checkResourceOwnership = (paramName = 'userId') => {
   };
 };
 
+/**
+ * Convenience function for role-based authorization
+ * @param {Array} allowedRoles - Array of allowed roles
+ * @returns {Function} Middleware function
+ */
+const requireRole = (allowedRoles = []) => {
+  return authorizeRoles(allowedRoles);
+};
+
 module.exports = {
   authenticateToken,
   authorizeRoles,
+  requireRole,
   optionalAuth,
   checkResourceOwnership
 };

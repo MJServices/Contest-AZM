@@ -170,6 +170,12 @@ export const showEmailSent = () => {
   );
 };
 
+// Aliases for backward compatibility
+export const showSuccessAlert = showSuccess;
+export const showErrorAlert = showError;
+export const showConfirmAlert = showConfirmation;
+export const showAlert = showInfo;
+
 export default {
   showSuccess,
   showError,
@@ -181,5 +187,10 @@ export default {
   showWelcome,
   showRegistrationSuccess,
   showEmailVerified,
-  showEmailSent
+  showEmailSent,
+  // Aliases
+  showSuccessAlert,
+  showErrorAlert,
+  showConfirmAlert,
+  showAlert
 };

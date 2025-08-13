@@ -183,6 +183,31 @@ export const authAPI = {
   verifyToken: () => api.get("/auth/verify-token"),
 };
 
+// Profile API functions
+export const profileAPI = {
+  getProfile: () => api.get("/profile"),
+  updateProfile: (profileData) => api.put("/profile", profileData),
+  updateProfileImage: (formData) => api.post("/profile/image", formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  }),
+  deleteProfileImage: () => api.delete("/profile/image"),
+  requestRoleUpgrade: (upgradeData) => api.post("/profile/role-upgrade", upgradeData),
+};
+
+// Reviews API functions
+export const reviewsAPI = {
+  list: (params) => api.get('/reviews', { params }),
+  featured: (limit = 6) => api.get('/reviews/featured', { params: { limit } }),
+  byUser: (userId, params) => api.get(`/reviews/user/${userId}`, { params }),
+  get: (id) => api.get(`/reviews/${id}`),
+  create: (payload) => api.post('/reviews', payload),
+  update: (id, payload) => api.put(`/reviews/${id}`, payload),
+  remove: (id) => api.delete(`/reviews/${id}`),
+  addResponse: (id, response_text) => api.post(`/reviews/${id}/response`, { response_text }),
+};
+
 // Helper functions for token management
 export const tokenManager = {
   setTokens: (accessToken, refreshToken) => {

@@ -222,3 +222,30 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Dark Purple Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* No bulky track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6d28d9, #db2777); /* Purple to pink */
+  border-radius: 9999px;
+  border: 2px solid transparent; /* Gap effect */
+  background-clip: content-box; /* Keeps gradient inside */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9333ea, #ec4899); /* Brighter on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea transparent; /* Purple scrollbar, no track */
+}

@@ -152,10 +152,8 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
       uploadData.append('color_palette', JSON.stringify(formData.color_palette));
       uploadData.append('is_featured', formData.is_featured);
 
-      // Mock upload - replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      onUpload(uploadData);
+      // Call the actual upload handler
+      await onUpload(uploadData);
       handleClose();
     } catch (error) {
       console.error('Upload failed:', error);
@@ -191,22 +189,22 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
         onClick={handleClose}
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+          className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sticky top-0 bg-white border-b border-neutral-200 px-6 py-4 rounded-t-2xl">
+          <div className="sticky top-0 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border-b border-white/20 px-6 py-4 rounded-t-3xl">
             <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-neutral-900">Upload Design</h2>
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Upload Design</h2>
               <button
                 onClick={handleClose}
-                className="p-2 hover:bg-neutral-100 rounded-full transition-colors"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
                 disabled={uploading}
               >
                 <X size={20} />
@@ -217,14 +215,14 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
           <form onSubmit={handleSubmit} className="p-6">
             {/* Image Upload */}
             <div className="mb-6">
-              <label className="form-label required">Design Image</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Design Image *</label>
               <div
                 className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-colors ${
-                  dragActive 
-                    ? 'border-primary-500 bg-primary-50' 
-                    : imagePreview 
-                      ? 'border-green-300 bg-green-50' 
-                      : 'border-neutral-300 hover:border-neutral-400'
+                  dragActive
+                    ? 'border-purple-400 bg-purple-500/10'
+                    : imagePreview
+                      ? 'border-green-400 bg-green-500/10'
+                      : 'border-white/20 hover:border-purple-400/50'
                 }`}
                 onDragEnter={handleDrag}
                 onDragLeave={handleDrag}
@@ -251,17 +249,17 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
                   </div>
                 ) : (
                   <div>
-                    <ImageIcon size={48} className="mx-auto text-neutral-400 mb-4" />
-                    <p className="text-lg font-medium text-neutral-900 mb-2">
+                    <ImageIcon size={48} className="mx-auto text-gray-400 mb-4" />
+                    <p className="text-lg font-medium text-white mb-2">
                       Drop your image here, or click to browse
                     </p>
-                    <p className="text-sm text-neutral-500 mb-4">
+                    <p className="text-sm text-gray-400 mb-4">
                       Supports JPG, PNG, WebP up to 10MB
                     </p>
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="btn-primary"
+                      className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
                     >
                       <Upload size={20} />
                       <span>Choose File</span>
@@ -281,29 +279,29 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
             {/* Basic Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="form-label required">Title</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Title *</label>
                 <input
                   type="text"
                   name="title"
                   value={formData.title}
                   onChange={handleInputChange}
                   placeholder="Enter design title"
-                  className="input"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300"
                   required
                 />
               </div>
               
               <div>
-                <label className="form-label required">Category</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Category *</label>
                 <select
                   name="category"
                   value={formData.category}
                   onChange={handleInputChange}
-                  className="input"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black focus:outline-none focus:border-purple-400/50 transition-all duration-300"
                   required
                 >
                   {categories.map(category => (
-                    <option key={category.value} value={category.value}>
+                    <option key={category.value} value={category.value} className="bg-slate-800 text-white">
                       {category.label}
                     </option>
                   ))}
@@ -313,16 +311,16 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="form-label required">Style</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Style *</label>
                 <select
                   name="style"
                   value={formData.style}
                   onChange={handleInputChange}
-                  className="input"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black focus:outline-none focus:border-purple-400/50 transition-all duration-300"
                   required
                 >
                   {styles.map(style => (
-                    <option key={style.value} value={style.value}>
+                    <option key={style.value} value={style.value} className="bg-slate-800 text-white">
                       {style.label}
                     </option>
                   ))}
@@ -330,16 +328,16 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
               </div>
               
               <div>
-                <label className="form-label">Featured Design</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Featured Design</label>
                 <div className="flex items-center space-x-3 mt-2">
                   <input
                     type="checkbox"
                     name="is_featured"
                     checked={formData.is_featured}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-primary-600 border-neutral-300 rounded focus:ring-primary-500"
+                    className="w-4 h-4 text-purple-600 border-white/20 rounded focus:ring-purple-500"
                   />
-                  <span className="text-sm text-neutral-600">
+                  <span className="text-sm text-gray-300">
                     Mark as featured design
                   </span>
                 </div>
@@ -348,32 +346,32 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
 
             {/* Description */}
             <div className="mb-6">
-              <label className="form-label">Description</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Description</label>
               <textarea
                 name="description"
                 value={formData.description}
                 onChange={handleInputChange}
                 placeholder="Describe your design, inspiration, and key features..."
                 rows={4}
-                className="input resize-none"
+                className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300 resize-none"
               />
             </div>
 
             {/* Tags */}
             <div className="mb-6">
-              <label className="form-label">Tags</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Tags</label>
               <div className="flex flex-wrap gap-2 mb-3">
                 {formData.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="badge bg-primary-100 text-primary-800 flex items-center space-x-1"
+                    className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-full text-sm text-black border border-purple-400/30 flex items-center space-x-1"
                   >
                     <Tag size={12} />
                     <span>{tag}</span>
                     <button
                       type="button"
                       onClick={() => removeTag(tag)}
-                      className="ml-1 hover:text-red-600"
+                      className="ml-1 hover:text-red-400 transition-colors"
                     >
                       <X size={12} />
                     </button>
@@ -386,13 +384,13 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
                   value={newTag}
                   onChange={(e) => setNewTag(e.target.value)}
                   placeholder="Add a tag"
-                  className="input flex-1"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300 flex-1"
                   onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
                 />
                 <button
                   type="button"
                   onClick={addTag}
-                  className="btn-outline"
+                  className="px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
                 >
                   <Plus size={16} />
                 </button>
@@ -401,7 +399,7 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
 
             {/* Color Palette */}
             <div className="mb-8">
-              <label className="form-label">Color Palette</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Color Palette</label>
               <div className="flex flex-wrap gap-3 mb-3">
                 {formData.color_palette.map((color, index) => (
                   <div
@@ -409,17 +407,17 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
                     className="relative group"
                   >
                     <div
-                      className="w-12 h-12 rounded-full border-2 border-neutral-200 shadow-sm"
+                      className="w-12 h-12 rounded-full border-2 border-white/20 shadow-sm"
                       style={{ backgroundColor: color }}
                     />
                     <button
                       type="button"
                       onClick={() => removeColor(color)}
-                      className="absolute -top-1 -right-1 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute -top-1 -right-1 p-1 bg-red-500 text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                     >
                       <X size={12} />
                     </button>
-                    <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-neutral-500">
+                    <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
                       {color}
                     </span>
                   </div>
@@ -430,19 +428,19 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
                   type="color"
                   value={newColor}
                   onChange={(e) => setNewColor(e.target.value)}
-                  className="w-12 h-10 border border-neutral-300 rounded-lg cursor-pointer"
+                  className="w-12 h-10 border border-white/20 rounded-lg cursor-pointer"
                 />
                 <input
                   type="text"
                   value={newColor}
                   onChange={(e) => setNewColor(e.target.value)}
                   placeholder="#000000"
-                  className="input flex-1"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-black placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300 flex-1"
                 />
                 <button
                   type="button"
                   onClick={addColor}
-                  className="btn-outline"
+                  className="px-4 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-white hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
                 >
                   <Palette size={16} />
                 </button>
@@ -450,23 +448,23 @@ const UploadModal = ({ isOpen, onClose, onUpload }) => {
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex justify-end space-x-4 pt-6 border-t border-neutral-200">
+            <div className="flex justify-end space-x-4 pt-6 border-t border-white/20">
               <button
                 type="button"
                 onClick={handleClose}
-                className="btn-outline"
+                className="px-6 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-white/20 text-white hover:border-red-400/50 transition-all duration-300 hover:scale-105"
                 disabled={uploading}
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="btn-primary"
+                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 disabled={uploading || !imageFile || !formData.title || !formData.category || !formData.style}
               >
                 {uploading ? (
                   <>
-                    <div className="spinner w-4 h-4"></div>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     <span>Uploading...</span>
                   </>
                 ) : (

@@ -10,6 +10,14 @@ const { testConnection } = require('./config/database');
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const profileRoutes = require('./routes/profile');
+const galleryRoutes = require('./routes/gallery');
+const consultationRoutes = require('./routes/consultations');
+const reviewRoutes = require('./routes/reviews');
+const projectRoutes = require('./routes/projects');
+const notificationRoutes = require('./routes/notifications');
+const adminRoutes = require('./routes/admin');
+const statsRoutes = require('./routes/stats');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -65,6 +73,10 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('combined'));
 }
 
+// Static file serving for uploads
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({
@@ -77,6 +89,14 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/profile', profileRoutes);
+app.use('/api/v1/gallery', galleryRoutes);
+app.use('/api/v1/consultations', consultationRoutes);
+app.use('/api/v1/reviews', reviewRoutes);
+app.use('/api/v1/projects', projectRoutes);
+app.use('/api/v1/notifications', notificationRoutes);
+app.use('/api/v1/admin', adminRoutes);
+app.use('/api/v1/stats', statsRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -87,12 +107,14 @@ app.get('/', (req, res) => {
     documentation: '/api/docs',
     endpoints: {
       auth: '/api/v1/auth',
-      users: '/api/v1/users',
-      products: '/api/v1/products',
+      profile: '/api/v1/profile',
+      gallery: '/api/v1/gallery',
       consultations: '/api/v1/consultations',
       reviews: '/api/v1/reviews',
-      gallery: '/api/v1/gallery',
-      admin: '/api/v1/admin'
+      projects: '/api/v1/projects',
+      notifications: '/api/v1/notifications',
+      admin: '/api/v1/admin',
+      stats: '/api/v1/stats'
     }
   });
 });

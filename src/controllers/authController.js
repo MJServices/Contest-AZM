@@ -208,7 +208,8 @@ const verifyEmail = async (req, res) => {
       message: 'Email verified successfully',
       data: {
         userId: user.user_id,
-        email: user.email
+        email: user.email,
+        emailVerified: true
       }
     });
 
