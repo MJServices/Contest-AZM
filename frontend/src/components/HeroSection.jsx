@@ -71,23 +71,10 @@ export default function HeroSection() {
             <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent hover:from-pink-400 hover:via-cyan-400 hover:to-purple-400 transition-all duration-1000">
               Create
             </span>
-            <span className="block text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mt-4 hover:from-purple-400 hover:via-pink-400 hover:to-cyan-400 transition-all duration-1000">
+            <span className="block text-4xl md:text-7xl lg:text-8xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-purple-400 hover:via-pink-400 hover:to-cyan-400 transition-all duration-1000 ">
               Stunning Interiors
             </span>
-            <div className="flex items-center justify-center mt-6">
-              <Sparkles
-                className="w-12 h-12 md:w-16 md:h-16 text-purple-400 animate-spin mr-4"
-                style={{ animationDuration: "3s" }}
-              />
-              <span className="text-4xl md:text-6xl">✨</span>
-              <Sparkles
-                className="w-12 h-12 md:w-16 md:h-16 text-pink-400 animate-spin ml-4"
-                style={{
-                  animationDuration: "4s",
-                  animationDirection: "reverse",
-                }}
-              />
-            </div>
+            
           </h1>
         </div>
 

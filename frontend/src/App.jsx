@@ -44,6 +44,7 @@ import "./App.css";
 import Home from "./components/Home";
 import UploadModal from "./components/UploadModal";
 import ReviewModal from "./components/ReviewModal";
+import Products from "./components/Products";
 
 // Query client
 const queryClient = new QueryClient({
@@ -61,6 +62,7 @@ const queryClient = new QueryClient({
 // Public routes whitelist - only these routes are accessible without authentication
 const PUBLIC_ROUTES = [
   "/",
+  "/products",
   "/login",
   "/register",
   "/verify-email",
@@ -250,6 +252,14 @@ function AppContent() {
               element={
                 <PublicRoute allowAuthenticated={true}>
                   <Home />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/products"
+              element={
+                <PublicRoute allowAuthenticated={true}>
+                  <Products />
                 </PublicRoute>
               }
             />

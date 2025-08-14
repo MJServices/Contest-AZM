@@ -49,6 +49,7 @@ api.interceptors.request.use(
       "/auth/request-password-reset",
       "/auth/reset-password",
       "/auth/refresh-token",
+      "/products"
     ];
 
     // Only add auth token for protected endpoints

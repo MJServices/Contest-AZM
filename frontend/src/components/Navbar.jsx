@@ -30,7 +30,7 @@ export default function Navbar() {
       ]
     : [
         { name: "Home", href: "/", icon: Home },
-        { name: "Features", href: "#features", icon: Search },
+        { name: "Products", href: "/products", icon: Search },
         { name: "Gallery", href: "/gallery", icon: ShoppingBag },
       ];
 
