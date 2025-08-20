@@ -75,6 +75,7 @@ const Gallery = () => {
         if (response.data.success) {
           setGalleryItems(response.data.data.items);
           setFilteredItems(response.data.data.items);
+          console.log(selectedItem)
         }
       } catch (error) {
         console.error("Error fetching gallery items:", error);

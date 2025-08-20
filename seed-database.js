@@ -176,6 +176,7 @@ const galleryData = [
     style: "modern",
     color_palette: ["#FFFFFF", "#F5F5F5", "#333333", "#8B4513"],
     tags: ["modern", "minimalist", "natural light", "neutral colors"],
+    image: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-369c-61f7-ae78-08848261c094/raw?se=2025-08-18T12%3A03%3A48Z&sp=r&sv=2024-08-04&sr=b&scid=5c23ba3c-9f51-5d15-a9e0-33dbfe49ebf1&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-17T22%3A48%3A34Z&ske=2025-08-18T22%3A48%3A34Z&sks=b&skv=2024-08-04&sig=1UTUdoh1UQmboB3iGH9ZOsnpnHA1RAba4ptVi1guz9E%3D",
   },
   {
     title: "Cozy Scandinavian Living Space",
@@ -185,6 +186,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F0F0F0", "#D2B48C", "#228B22"],
     tags: ["scandinavian", "cozy", "hygge", "wood accents"],
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Loft Living Room",
@@ -194,6 +196,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#8B4513", "#CD853F", "#FF6347"],
     tags: ["industrial", "loft", "exposed brick", "metal accents"],
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Traditional Family Living Room",
@@ -203,6 +206,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#8B0000", "#DAA520", "#F5DEB3", "#2F4F4F"],
     tags: ["traditional", "family friendly", "warm colors", "classic"],
+    image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Contemporary Open Concept Living",
@@ -212,6 +216,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#FFFFFF", "#C0C0C0", "#000000", "#4169E1"],
     tags: ["contemporary", "open concept", "statement lighting"],
+    image: "https://images.unsplash.com/photo-1631889993959-41b4e9c0035d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Bohemian Eclectic Living Room",
@@ -221,6 +226,7 @@ const galleryData = [
     style: "bohemian",
     color_palette: ["#FF69B4", "#FFD700", "#32CD32", "#8A2BE2"],
     tags: ["bohemian", "eclectic", "colorful", "global style"],
+    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Minimalist Zen Living Space",
@@ -230,6 +236,7 @@ const galleryData = [
     style: "minimalist",
     color_palette: ["#FFFFFF", "#F8F8FF", "#E6E6FA", "#D3D3D3"],
     tags: ["minimalist", "zen", "serene", "simple"],
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Art Deco Glamour Living Room",
@@ -239,6 +246,7 @@ const galleryData = [
     style: "art_deco",
     color_palette: ["#FFD700", "#000000", "#FFFFFF", "#C0C0C0"],
     tags: ["art deco", "glamorous", "metallic", "geometric"],
+    image: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Bedroom designs
@@ -250,6 +258,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#F5F5DC", "#E6E6FA", "#D8BFD8", "#B0C4DE"],
     tags: ["master bedroom", "serene", "calming", "retreat"],
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Modern Minimalist Bedroom",
@@ -259,6 +268,7 @@ const galleryData = [
     style: "minimalist",
     color_palette: ["#FFFFFF", "#F0F0F0", "#D3D3D3", "#696969"],
     tags: ["minimalist", "clean", "uncluttered", "modern"],
+    image: "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Rustic Farmhouse Bedroom",
@@ -268,6 +278,7 @@ const galleryData = [
     style: "rustic",
     color_palette: ["#F5DEB3", "#DEB887", "#8B4513", "#228B22"],
     tags: ["rustic", "farmhouse", "reclaimed wood", "vintage"],
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Scandinavian Bedroom Sanctuary",
@@ -277,6 +288,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F5F5F5", "#E0E0E0", "#8FBC8F"],
     tags: ["scandinavian", "natural materials", "soft lighting", "airy"],
+    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Chic Bedroom",
@@ -286,6 +298,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#696969", "#A0522D", "#FF4500"],
     tags: ["industrial", "urban", "exposed elements", "chic"],
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Traditional Elegant Bedroom",
@@ -295,6 +308,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#8B0000", "#DAA520", "#F5DEB3", "#2F4F4F"],
     tags: ["traditional", "elegant", "sophisticated", "rich fabrics"],
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Bohemian Dream Bedroom",
@@ -304,6 +318,7 @@ const galleryData = [
     style: "bohemian",
     color_palette: ["#FF1493", "#FFD700", "#32CD32", "#9370DB"],
     tags: ["bohemian", "whimsical", "layered textiles", "artistic"],
+    image: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Mid-Century Modern Bedroom",
@@ -313,6 +328,7 @@ const galleryData = [
     style: "mid_century",
     color_palette: ["#F0E68C", "#FF6347", "#4682B4", "#2F4F4F"],
     tags: ["mid-century", "retro", "bold accents", "vintage modern"],
+    image: "https://images.unsplash.com/photo-1631049035182-249067d7618e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Kitchen designs
@@ -324,6 +340,7 @@ const galleryData = [
     style: "modern",
     color_palette: ["#FFFFFF", "#2F2F2F", "#C0C0C0", "#4169E1"],
     tags: ["modern", "chef kitchen", "high-end appliances", "sleek"],
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Farmhouse Country Kitchen",
@@ -333,6 +350,7 @@ const galleryData = [
     style: "rustic",
     color_palette: ["#F5DEB3", "#8B4513", "#FFFFFF", "#228B22"],
     tags: ["farmhouse", "country", "shaker cabinets", "butcher block"],
+    image: "https://images.unsplash.com/photo-1556909018-f8e903774e0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Scandinavian Kitchen Design",
@@ -342,6 +360,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F5F5F5", "#D2B48C", "#8FBC8F"],
     tags: ["scandinavian", "functional", "natural wood", "light"],
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Kitchen Loft",
@@ -351,6 +370,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#8B4513", "#C0C0C0", "#FF6347"],
     tags: ["industrial", "urban", "exposed brick", "steel"],
+    image: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Traditional Gourmet Kitchen",
@@ -360,6 +380,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#8B4513", "#F5DEB3", "#FFFFFF", "#2F4F4F"],
     tags: ["traditional", "gourmet", "wood cabinets", "marble"],
+    image: "https://images.unsplash.com/photo-1556909114-67b3b1d35a92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Contemporary Open Kitchen",
@@ -369,6 +390,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#FFFFFF", "#696969", "#000000", "#4169E1"],
     tags: ["contemporary", "open concept", "island", "sleek"],
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Minimalist Kitchen Design",
@@ -378,6 +400,7 @@ const galleryData = [
     style: "minimalist",
     color_palette: ["#FFFFFF", "#F8F8FF", "#E6E6FA", "#D3D3D3"],
     tags: ["minimalist", "hidden storage", "seamless", "clean"],
+    image: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Mid-Century Kitchen Revival",
@@ -387,6 +410,7 @@ const galleryData = [
     style: "mid_century",
     color_palette: ["#F0E68C", "#FF6347", "#4682B4", "#32CD32"],
     tags: ["mid-century", "retro", "colorful", "vintage appliances"],
+    image: "https://images.unsplash.com/photo-1556909114-26ba4c1ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Bathroom designs
@@ -398,6 +422,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#F5F5DC", "#E6E6FA", "#D8BFD8", "#8FBC8F"],
     tags: ["spa-like", "luxurious", "natural materials", "calming"],
+    image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Modern Minimalist Bathroom",
@@ -407,6 +432,7 @@ const galleryData = [
     style: "minimalist",
     color_palette: ["#FFFFFF", "#F0F0F0", "#D3D3D3", "#696969"],
     tags: ["minimalist", "geometric", "neutral", "simple"],
+    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Bathroom Design",
@@ -416,6 +442,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#696969", "#C0C0C0", "#8B4513"],
     tags: ["industrial", "exposed pipes", "concrete", "metal fixtures"],
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Traditional Elegant Bathroom",
@@ -425,6 +452,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#FFFFFF", "#DAA520", "#8B0000", "#2F4F4F"],
     tags: ["traditional", "marble", "brass fixtures", "elegant"],
+    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Scandinavian Bathroom Retreat",
@@ -434,6 +462,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F5F5F5", "#D2B48C", "#E0E0E0"],
     tags: ["scandinavian", "natural wood", "ceramic", "serene"],
+    image: "https://images.unsplash.com/photo-1564540574859-0dfb63293365?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Art Deco Powder Room",
@@ -443,6 +472,7 @@ const galleryData = [
     style: "art_deco",
     color_palette: ["#FFD700", "#000000", "#FFFFFF", "#C0C0C0"],
     tags: ["art deco", "powder room", "geometric", "metallic"],
+    image: "https://images.unsplash.com/photo-1631889993959-41b4e9c0035d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Rustic Farmhouse Bathroom",
@@ -452,6 +482,7 @@ const galleryData = [
     style: "rustic",
     color_palette: ["#F5DEB3", "#8B4513", "#FFFFFF", "#228B22"],
     tags: ["rustic", "farmhouse", "reclaimed wood", "vintage fixtures"],
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Contemporary Guest Bathroom",
@@ -461,6 +492,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#FFFFFF", "#4169E1", "#C0C0C0", "#000000"],
     tags: ["contemporary", "guest bathroom", "bold tiles", "modern fixtures"],
+    image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Office designs
@@ -472,6 +504,7 @@ const galleryData = [
     style: "modern",
     color_palette: ["#FFFFFF", "#2F2F2F", "#4169E1", "#C0C0C0"],
     tags: ["home office", "ergonomic", "tech integration", "productive"],
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Co-Working Space",
@@ -481,6 +514,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#8B4513", "#FF6347", "#C0C0C0"],
     tags: ["co-working", "industrial", "collaborative", "creative"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Scandinavian Study Room",
@@ -490,6 +524,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F5F5F5", "#D2B48C", "#8FBC8F"],
     tags: ["study room", "scandinavian", "natural light", "minimal"],
+    image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Traditional Executive Office",
@@ -499,6 +534,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#8B4513", "#8B0000", "#DAA520", "#2F4F4F"],
     tags: ["executive office", "traditional", "rich wood", "leather"],
+    image: "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Contemporary Creative Studio",
@@ -508,6 +544,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#FFFFFF", "#FF6347", "#4169E1", "#32CD32"],
     tags: ["creative studio", "contemporary", "flexible", "inspiring"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Minimalist Workspace",
@@ -517,6 +554,7 @@ const galleryData = [
     style: "minimalist",
     color_palette: ["#FFFFFF", "#F8F8FF", "#E6E6FA", "#D3D3D3"],
     tags: ["minimalist", "workspace", "focus", "productivity"],
+    image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Bohemian Artist Studio",
@@ -526,6 +564,7 @@ const galleryData = [
     style: "bohemian",
     color_palette: ["#FF69B4", "#FFD700", "#32CD32", "#8A2BE2"],
     tags: ["artist studio", "bohemian", "vibrant", "creative"],
+    image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Mid-Century Modern Office",
@@ -535,6 +574,7 @@ const galleryData = [
     style: "mid_century",
     color_palette: ["#F0E68C", "#FF6347", "#4682B4", "#2F4F4F"],
     tags: ["mid-century", "retro", "vintage furniture", "geometric"],
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Dining Room designs
@@ -546,6 +586,7 @@ const galleryData = [
     style: "traditional",
     color_palette: ["#8B0000", "#DAA520", "#F5DEB3", "#2F4F4F"],
     tags: ["formal dining", "elegant", "entertaining", "sophisticated"],
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Modern Open Dining Space",
@@ -555,6 +596,7 @@ const galleryData = [
     style: "modern",
     color_palette: ["#FFFFFF", "#2F2F2F", "#C0C0C0", "#4169E1"],
     tags: ["open dining", "contemporary", "integrated", "modern"],
+    image: "https://images.unsplash.com/photo-1556909114-26ba4c1ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Scandinavian Family Dining",
@@ -564,6 +606,7 @@ const galleryData = [
     style: "scandinavian",
     color_palette: ["#FFFFFF", "#F5F5F5", "#D2B48C", "#8FBC8F"],
     tags: ["family dining", "scandinavian", "warm", "gatherings"],
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Industrial Dining Loft",
@@ -573,6 +616,7 @@ const galleryData = [
     style: "industrial",
     color_palette: ["#2F2F2F", "#8B4513", "#C0C0C0", "#FF6347"],
     tags: ["industrial", "loft", "raw materials", "urban"],
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Bohemian Eclectic Dining",
@@ -582,6 +626,7 @@ const galleryData = [
     style: "bohemian",
     color_palette: ["#FF69B4", "#FFD700", "#32CD32", "#8A2BE2"],
     tags: ["bohemian", "eclectic", "colorful", "global"],
+    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Mid-Century Dining Room",
@@ -591,6 +636,7 @@ const galleryData = [
     style: "mid_century",
     color_palette: ["#F0E68C", "#FF6347", "#4682B4", "#32CD32"],
     tags: ["mid-century", "retro", "iconic furniture", "bold colors"],
+    image: "https://images.unsplash.com/photo-1631049035182-249067d7618e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 
   // Outdoor designs
@@ -602,6 +648,7 @@ const galleryData = [
     style: "modern",
     color_palette: ["#FFFFFF", "#2F2F2F", "#8FBC8F", "#4169E1"],
     tags: ["patio", "modern", "weather-resistant", "outdoor kitchen"],
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Rustic Garden Retreat",
@@ -611,6 +658,7 @@ const galleryData = [
     style: "rustic",
     color_palette: ["#8B4513", "#228B22", "#F5DEB3", "#654321"],
     tags: ["garden", "rustic", "wooden elements", "native plants"],
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Contemporary Pool Area",
@@ -620,6 +668,7 @@ const galleryData = [
     style: "contemporary",
     color_palette: ["#FFFFFF", "#4169E1", "#C0C0C0", "#00CED1"],
     tags: ["pool area", "contemporary", "lounge seating", "landscaping"],
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Bohemian Outdoor Oasis",
@@ -629,6 +678,7 @@ const galleryData = [
     style: "bohemian",
     color_palette: ["#FF69B4", "#FFD700", "#32CD32", "#8A2BE2"],
     tags: ["outdoor oasis", "bohemian", "colorful textiles", "hanging plants"],
+    image: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -825,8 +875,8 @@ async function seedDatabase() {
       const galleryItem = await Gallery.create({
         title: item.title,
         description: item.description,
-        image_url: generateImageUrl(item.category, i),
-        thumbnail_url: generateImageUrl(item.category, i) + "&w=300&h=200",
+        image_url: generateImageUrl(item.image, i),
+        thumbnail_url: generateImageUrl(item.image, i) + "&w=300&h=200",
         category: item.category,
         style: item.style,
         color_palette: item.color_palette,
