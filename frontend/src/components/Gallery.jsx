@@ -19,7 +19,7 @@ import {
 import { useAuth } from "../contexts/AuthContext";
 import UploadModal from "./UploadModal";
 import ReviewModal from "./ReviewModal";
-import api, { reviewsAPI } from "../services/api";
+import api from "../services/api";
 
 const Gallery = () => {
   const { user } = useAuth();
@@ -36,7 +36,6 @@ const Gallery = () => {
   const [viewMode, setViewMode] = useState("all"); // 'all' or 'my-designs'
   const [userDesigns, setUserDesigns] = useState([]);
   const [showReviewModal, setShowReviewModal] = useState(false);
-  const [designerStats, setDesignerStats] = useState(null);
 
   const categories = [
     { value: "all", label: "All Categories" },
@@ -75,7 +74,7 @@ const Gallery = () => {
         if (response.data.success) {
           setGalleryItems(response.data.data.items);
           setFilteredItems(response.data.data.items);
-          console.log(selectedItem)
+          console.log(response.data.data.items);
         }
       } catch (error) {
         console.error("Error fetching gallery items:", error);
@@ -448,103 +447,106 @@ const Gallery = () => {
         {/* Gallery Grid/List */}
         {displayMode === "grid" ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.gallery_id}
-                className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400/50 cursor-pointer transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-purple-500/20"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                onClick={() => setSelectedItem(item)}
-              >
-                <div className="relative">
-                  <img
-                    src={item.thumbnail_url}
-                    alt={item.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+            {filteredItems.map((item, index) => {
+              console.log(item)
+              return (
+                <motion.div
+                  key={item.gallery_id}
+                  className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400/50 cursor-pointer transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-purple-500/20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  onClick={() => setSelectedItem(item)}
+                >
+                  <div className="relative">
+                    <img
+                      src={item.thumbnail_url}
+                      alt={item.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
 
-                  {item.is_featured && (
-                    <div className="absolute top-3 left-3">
-                      <span className="flex items-center space-x-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-semibold rounded-full">
-                        <Star size={12} />
-                        <span>Featured</span>
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="absolute bottom-3 right-3 flex space-x-2">
-                    <span className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-purple-500/80 to-pink-500/80 backdrop-blur-lg rounded-full text-xs">
-                      <Eye size={12} />
-                      <span>{item.view_count}</span>
-                    </span>
-                    <span className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-red-500/80 to-pink-500/80 backdrop-blur-lg rounded-full text-xs">
-                      <Heart size={12} />
-                      <span>{item.like_count}</span>
-                    </span>
-                  </div>
-
-                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    {viewMode === "my-designs" &&
-                    user &&
-                    item.uploader.user_id === user.user_id ? (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleDeleteDesign(item.gallery_id);
-                        }}
-                        className="p-2 bg-red-500/80 backdrop-blur-lg rounded-full hover:bg-red-600/80 transition-colors"
-                      >
-                        <X className="w-4 h-4 text-white" />
-                      </button>
-                    ) : (
-                      <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
+                    {item.is_featured && (
+                      <div className="absolute top-3 left-3">
+                        <span className="flex items-center space-x-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-semibold rounded-full">
+                          <Star size={12} />
+                          <span>Featured</span>
+                        </span>
+                      </div>
                     )}
-                  </div>
-                </div>
 
-                <div className="p-4">
-                  <h3 className="font-semibold text-white mb-2 line-clamp-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 mb-3 line-clamp-2">
-                    {item.description}
-                  </p>
-
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-                    <div className="flex items-center space-x-1">
-                      <User size={12} />
-                      <span>
-                        {item.uploader.profile.firstname}{" "}
-                        {item.uploader.profile.lastname}
+                    <div className="absolute bottom-3 right-3 flex space-x-2">
+                      <span className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-purple-500/80 to-pink-500/80 backdrop-blur-lg rounded-full text-xs">
+                        <Eye size={12} />
+                        <span>{item.view_count}</span>
+                      </span>
+                      <span className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-red-500/80 to-pink-500/80 backdrop-blur-lg rounded-full text-xs">
+                        <Heart size={12} />
+                        <span>{item.like_count}</span>
                       </span>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <Calendar size={12} />
-                      <span>{formatDate(item.created_at)}</span>
+
+                    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      {viewMode === "my-designs" &&
+                      user &&
+                      item.uploader.user_id === user.user_id ? (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDeleteDesign(item.gallery_id);
+                          }}
+                          className="p-2 bg-red-500/80 backdrop-blur-lg rounded-full hover:bg-red-600/80 transition-colors"
+                        >
+                          <X className="w-4 h-4 text-white" />
+                        </button>
+                      ) : (
+                        <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
+                      )}
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-1">
-                    {item.tags.slice(0, 3).map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-full text-xs text-gray-300 border border-white/10"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {item.tags.length > 3 && (
-                      <span className="px-2 py-1 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-full text-xs text-gray-300 border border-white/10">
-                        +{item.tags.length - 3}
-                      </span>
-                    )}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-white mb-2 line-clamp-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-400 mb-3 line-clamp-2">
+                      {item.description}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                      <div className="flex items-center space-x-1">
+                        <User size={12} />
+                        <span>
+                          {item.uploader.profile.firstname}{" "}
+                          {item.uploader.profile.lastname}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Calendar size={12} />
+                        <span>{formatDate(item.created_at)}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1">
+                      {item.tags.slice(0, 3).map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="px-2 py-1 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-full text-xs text-gray-300 border border-white/10"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {item.tags.length > 3 && (
+                        <span className="px-2 py-1 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-lg rounded-full text-xs text-gray-300 border border-white/10">
+                          +{item.tags.length - 3}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         ) : (
           <div className="space-y-6">

@@ -24,6 +24,7 @@ import { showSuccessAlert, showErrorAlert } from '../utils/sweetAlert';
 const BookConsultation = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  console.log('Authenticated user:', user);
   
   // Multi-step form state
   const [currentStep, setCurrentStep] = useState(1);
