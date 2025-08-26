@@ -19,7 +19,11 @@ const sequelize = new Sequelize(
     port: process.env.DB_PORT || 3306,
     dialect: "mysql",
     dialectOptions: {
-      connectTimeout: 10000, // 10s timeout
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // Railway uses self-signed certs
+      },
+      connectTimeout: 10000,
     },
     pool: {
       max: 5,
